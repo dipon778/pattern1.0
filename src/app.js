@@ -11,7 +11,7 @@ function equation(sum) {
         // if even divide by 2
         if (sum % 2 == 0) {            
             sum = sum / 2;
-            datas[i]=sum;
+            datas[i]=sum;            
             
         //if odd store as it is 
         } else if ((sum % 2) != 0) {
