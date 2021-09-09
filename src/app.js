@@ -1,17 +1,21 @@
 
 //Declaring storing variable
-var sum,datas,num=-1;
+var sum,datas,num=-1,iterations;;
 
 
 //function for generating data 
 function equation(sum) {
-
-    for (var i = 0; i < 100; i++) { 
-        
+    for (var i = 0; i < 100; i++) {         
         // if even divide by 2
         if (sum % 2 == 0) {            
             sum = sum / 2;
-            datas[i]=sum;            
+            datas[i]=sum;
+            if(sum == 2){
+                sum = sum /2;
+                datas[i+1] = sum;
+                iterations = i+1;
+                break;
+            }            
             
         //if odd store as it is 
         } else if ((sum % 2) != 0) {
@@ -46,6 +50,7 @@ function onClick(){
     datas = [];
     sum = parseInt(document.getElementById("user-input").value);
     equation(sum);
+    document.getElementById("msg").innerHTML = `Total Number of iteration : ${iterations}`;
     
     Plotly.newPlot('chart',[{
         y:[getData()],
