@@ -1,54 +1,70 @@
 
 //Declaring storing variable
-var datas,num=-1;
+var sum,datas,num=-1;
+
 
 //function for generating data 
-function equation() {
+function equation(sum) {
 
-    datas = [];
-    for (var i = 0; i < 100; i++) {
-
-        //var sum = document.getElementById('user-input').value; 
-        //console.log(sum);
-
-        //The equation 
-        var sum = 3 * i + 1;
-
+    for (var i = 0; i < 100; i++) { 
+        
         // if even divide by 2
-        if (sum % 2 === 0) {
-            
+        if (sum % 2 == 0) {            
             sum = sum / 2;
             datas[i]=sum;
             
         //if odd store as it is 
-        } else if (sum % 2 != 0) {    
+        } else if ((sum % 2) != 0) {
+            //The equation 
+            sum = 3 * sum + 1;    
             datas[i]=sum;    
         }        
     }
 }
-equation();
 
-function getData(){
-    if( num < datas.length){
+
+    
+
+
+
+ function getData(){
+    if( num <  datas.length){
         num ++;
     return datas[num];
     }    
 }
 
-Plotly.newPlot('chart',[{
-    y:[getData()],
-    type:'line'
-}]);
 
-var cnt = 0;
-setInterval(function(){
-    Plotly.extendTraces('chart',{ y:[[getData()]]}, [0]);
-    cnt++;
-    if(cnt > 500) {
-        Plotly.relayout('chart',{
-            xaxis: {
-                range: [cnt-500,cnt]
-            }
-        });
+
+
+// setInterval( function(){
+    
+// },400);
+
+function onClick(){
+
+    datas = [];
+    sum = parseInt(document.getElementById("user-input").value);
+    equation(sum);
+    
+    Plotly.newPlot('chart',[{
+        y:[getData()],
+        type:'line'
+    }]);
+    var cnt = 0;
+
+    for(var j=0;j<100;j++){
+
+        Plotly.extendTraces('chart',{ y:[[getData()]]}, [0]);
+        cnt++;
+        if(cnt > 500) {
+            Plotly.relayout('chart',{
+                xaxis: {
+                    range: [cnt-500,cnt]
+                }
+            });
+        }
     }
-},400);
+
+}
+
