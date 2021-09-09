@@ -48,6 +48,7 @@ function equation(sum) {
 function onClick(){
 
     datas = [];
+    num=-1;
     sum = parseInt(document.getElementById("user-input").value);
     equation(sum);
     document.getElementById("msg").innerHTML = `Total Number of iteration : ${iterations}`;
