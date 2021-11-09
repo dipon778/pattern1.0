@@ -7,7 +7,7 @@ var sum,datas,num=-1,iterations;;
 function equation(sum) {
     for (var i = 0; i < 1000; i++) {         
         // if even divide by 2
-        if (sum % 2 == 0) {     hgfdgfdsgfdgfdgfd 
+        if (sum % 2 == 0) {   asdasdasd  i love js kekwjqhe  maksa kasbjkjkhn  kjsdjkfhsd kjaskjsasasf 
             sum = sum / 2;
             datas[i]=sum;
             if(sum == 2){
