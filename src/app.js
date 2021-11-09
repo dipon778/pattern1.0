@@ -9,7 +9,7 @@ function equation(sum) {
     for (var i = 0; i < 100; i++) { 
         
         // if even divide by 2
-        if (sum % 2 == 0) {            
+        if (sum % 2 == 0) {dfgdgdf            
             sum = sum / 2;
             datas[i]=sum;            
             
