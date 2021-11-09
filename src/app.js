@@ -5,7 +5,7 @@ var sum,datas,num=-1,iterations;;
 
 //function for generating data 
 function equation(sum) {
-    for (var i = 0; i < 100; i++) {         
+    for (var i = 0; i < 1000; i++) {         
         // if even divide by 2
         if (sum % 2 == 0) {            
             sum = sum / 2;
@@ -13,7 +13,7 @@ function equation(sum) {
             if(sum == 2){
                 sum = sum /2;
                 datas[i+1] = sum;
-                iterations = i+1;
+                iterations = i+2;
                 break;
             }            
             
@@ -39,11 +39,17 @@ function equation(sum) {
 }
 
 
-
-
-// setInterval( function(){
     
-// },400);
+    // setInterval( function(){
+
+        
+    //     console.log('useless'+num++);
+
+    // },400);
+
+
+
+
 
 function onClick(){
 
